@@ -3,6 +3,7 @@ from django.core.validators import RegexValidator  # Создайте свои �
 from django.core.validators import MinValueValidator, MaxValueValidator
 from datetime import datetime
 
+
 class Author(models.Model):
     phone_regex = RegexValidator(
         regex=r'^\+79\d{9}$',
@@ -126,7 +127,7 @@ class AuthorProfile(models.Model):
                                 help_text="Стаж в годах")
 
     def __str__(self):
-        return str(self.name)
+        return f"Автор: {self.author}; Стаж: {self.stage} лет"
 
 
 class Entry(models.Model):
@@ -137,7 +138,7 @@ class Entry(models.Model):
     tags = models.ManyToManyField("Tag", related_name='entries')
 
     def __str__(self):
-        return str(self.name)
+        return str(self.text)
 
 
 class Tag(models.Model):
