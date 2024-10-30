@@ -16,7 +16,7 @@ if __name__ == "__main__":
         name = serializers.CharField(max_length=200)
         email = serializers.EmailField()
 
-        def create(self, validated_data):
+        def create(self, validated_data):A
             """
             Создать и вернуть новый объект Author на основе предоставленных проверенных данных.
             """
